@@ -1,0 +1,11 @@
+const char* findTheChar(const char *str, char chr)
+{
+	while (str <= str + strlen(str) )
+	{
+		if (*str == chr)
+			return str;
+		str++;
+	}
+
+    return NULL;
+}

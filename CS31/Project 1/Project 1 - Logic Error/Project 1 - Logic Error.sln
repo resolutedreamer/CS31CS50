@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project 1 - Logic Error", "Project 1 - Logic Error\Project 1 - Logic Error.vcxproj", "{1881660B-6C75-4157-AF38-384CEABE9FA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1881660B-6C75-4157-AF38-384CEABE9FA0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1881660B-6C75-4157-AF38-384CEABE9FA0}.Debug|Win32.Build.0 = Debug|Win32
+		{1881660B-6C75-4157-AF38-384CEABE9FA0}.Release|Win32.ActiveCfg = Release|Win32
+		{1881660B-6C75-4157-AF38-384CEABE9FA0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+The problem is that when you called the function hypotenuse, you give it a pointer p..... which does not point to any useful address. What you need to do is point p to a new double, or some other double at least, so that the pointer points to a place in memory where you can store a double. That way, the function hypotenuse will store the correct answer into that double, which can be cout later in main.
+
+
+int main()
+{
+    double* p;
+	p = new double;
+    hypotenuse(1.5, 2.0, p);
+    cout << "The hypotenuse is " << *p << endl;
+}

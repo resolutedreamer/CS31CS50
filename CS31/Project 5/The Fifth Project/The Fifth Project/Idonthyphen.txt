@@ -1,0 +1,10 @@
+Do you nope the alphabet?
+
+
+ABC-D-EFG ABD------EFG
+HI-JKLK-M AB-DE--------FG
+
+ABCDEG
+--QWERTY- WAASD------
+NOPQRS
+TUVWXYZ

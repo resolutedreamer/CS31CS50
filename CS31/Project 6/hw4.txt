@@ -1,0 +1,30 @@
+diff=1
+4
+5
+79
+9
+-1
+19
+
+---------------------
+the first line cout outputs will be 1 and then a new line, because the difference beween the memory address of the 5th entry of "array" and the entry of "array" that ptr is pointing to is 1.
+
+the next 6 numbers on the next 6 lines are the final values of the entries of array.
+
+The number 4 comes from the original 4 being swapped to the beginning of the array.
+
+the number 5 comes from the original 5 in the array that was swapped from being the 0th entry in the array to being the 1th entry of the array
+
+the number 79 comes from the line *(array+1) = 79; which sets 79 to be the value stored at the first memory address after the memory address which marks the beginning of the array.
+
+the 9 come from ptr[1] = 9; where ptr was set to the 2th position of array, so ptr[1] refers to the 3th position of the array.
+
+the -1 comes from the lines 
+
+ptr += 2;
+*ptr = -1;
+
+which put the pointer at the 4th position of array (from the 2nd position where it was before) and set the value located there to -1.
+
+the 19 was there in the original array.
+The last item that was output is the newline after 19

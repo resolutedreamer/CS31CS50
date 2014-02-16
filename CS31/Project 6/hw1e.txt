@@ -1,0 +1,1 @@
+the problem with this function is that the array arr is created in computeSquares, but later on when the main function tries to output the elements of the array (which was pointed to by ptr), we left the function already, so the information that computeSquares stored is gone by then.

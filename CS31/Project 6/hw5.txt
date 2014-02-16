@@ -1,0 +1,18 @@
+void deleteG(char *string)
+{
+	char *hold;
+	while( string < string + strlen(string))
+	{
+		if (*string == 'G' || *string == 'g')
+		{
+			hold = string;
+			while (string < string + strlen(string))
+			{
+				*string = *(string+1);
+				string++;
+			}
+			string = hold;
+		}
+		string++;
+	}
+}

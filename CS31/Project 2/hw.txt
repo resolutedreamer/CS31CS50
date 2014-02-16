@@ -1,0 +1,56 @@
+1. The output produced by the following program segment is:
+endlendl
+grendel
+2. The program up for consideration asks the user to enter a number, and then the program writes out a number sign that at that many spaces away from the beginning of the line, and then on the next line, outputs a number sign one space closer to the beginning, and the same on subsequent lines, until the number sign is on the first line.
+for example, for the user inputing the number 6, the output looks like
+
+Enter a number: 6
+     #
+    #
+   #
+  #
+ #
+#
+3.
+#include <iostream>
+	using namespace std;
+
+	int main()
+	{
+	    int len;
+
+	    cout << "Enter a number: ";
+	    cin >> len;
+
+	    for (int i = 0; i < len; i++)
+	    {
+		int j=1;
+		while ((len != 0) && (!(len < 0 )) && (i+j < len));
+		{
+		    cout << " ";
+			j++;
+		}
+				
+		
+		cout << "#" << endl;
+	    }
+	}
+
+4.
+5.
+		switch (month)
+		{
+		case 6:
+			cout << "summer solstice";
+			break;
+		case 12:
+			cout << "winter solstice";
+			break;
+		case 3:
+		case 9:
+			cout << "equinox";
+			break;
+		default:
+			cout << "nothing special";
+			break;
+		}

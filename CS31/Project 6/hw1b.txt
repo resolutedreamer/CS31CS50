@@ -1,0 +1,14 @@
+The problem is that as presented, the pointer is passed by value, not passed by reference, so when the function finishes running, the copy of the pointer p is destroyed, and the actual pointer ptr in the main routine was not changed at all. I add the & sign so that the variable p is passed by references.
+
+void findDisorder(int arr[], int n, int* &p)
+
+        for (int k = 1; k < n; k++)
+        {
+            if (arr[k] < arr[k-1])
+            {
+                 p = arr + k;
+                 return;
+            }
+        }
+	p = NULL;
+} 

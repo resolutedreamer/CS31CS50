@@ -1,0 +1,9 @@
+double computeAverage(const double* scores, int numScores)
+{
+    double tot = 0;
+	for (int k = 0; k < numScores; k++)
+	{
+		tot += *(scores + k);
+	}
+    return tot/numScores;
+}

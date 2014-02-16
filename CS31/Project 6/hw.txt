@@ -1,0 +1,190 @@
+1a.
+
+int main()
+    {
+        int arr[3] = { 5, 12, 15 };
+        int* ptr = arr;
+
+        *ptr = 10;          // set arr[0] to 10
+        *(ptr + 1) = 20;      // set arr[1] to 20
+        ptr += 2;
+        ptr[0] = 30;        // set arr[2] to 30
+
+        while (ptr >= arr)
+        {
+            
+            cout << ' ' << *ptr;    // print values
+			ptr--;
+        }
+	cout << endl;
+}
+
+1b.
+
+The problem is that as presented, the pointer is passed by value, not passed by reference, so when the function finishes running, the copy of the pointer p is destroyed, and the actual pointer ptr in the main routine was not changed at all. I add the & sign so that the variable p is passed by references.
+
+void findDisorder(int arr[], int n, int* &p)
+
+        for (int k = 1; k < n; k++)
+        {
+            if (arr[k] < arr[k-1])
+            {
+                 p = arr + k;
+                 return;
+            }
+        }
+	p = NULL;
+} 
+
+1c.
+The problem is that when you called the function hypotenuse, you give it a pointer p..... which does not point to any useful address. What you need to do is point p to a new double, or some other double at least, so that the pointer points to a place in memory where you can store a double. That way, the function hypotenuse will store the correct answer into that double, which can be cout later in main.
+
+
+int main()
+{
+    double* p;
+	p = new double;
+    hypotenuse(1.5, 2.0, p);
+    cout << "The hypotenuse is " << *p << endl;
+}
+
+1d.
+
+The problem here is that the match function is not actually comparing the characters of the strings, because the match function is not looking at entries of the array, but it is trying to instead compare the arrays themselves. I add a loop so that the function will actually go through the entries of the different arrays.
+
+bool match(const char str1[], const char str2[])
+{
+	int i = 0;
+	while (1)
+	{
+		while (str1[i] != '\0'  &&  str2[i] != '\0')  // zero bytes at ends
+		{
+			if (str1[i] != str2[i])  // compare corresponding characters
+				return false;
+			i++;            // advance to the next character
+		}
+		return !(strcmp(str1, str2));   // both ended at same time?
+	}
+}
+
+1e.
+
+the problem with this function is that the array arr is created in computeSquares, but later on when the main function tries to output the elements of the array (which was pointed to by ptr), we left the function already, so the information that computeSquares stored is gone by then.
+
+
+2.
+
+string *fp;
+
+string fish[5] = {"failaaaaa", "ure", "is", "not", "good"};
+
+fp = (fish + 4);
+
+*fp = "salmon";
+
+*(fish + 3) = "yellowtail";
+
+fp -=3;
+
+fp[1] = "eel";
+
+fp[0] = "tuna";
+
+bool d = (fp == fish);
+
+bool b = ( *fp == *(fp + 1) )
+
+3a.
+
+
+double computeAverage(const double* scores, int numScores)
+{
+    double tot = 0;
+	for (int k = 0; k < numScores; k++)
+	{
+		tot += *(scores + k);
+	}
+    return tot/numScores;
+}
+
+3b.
+
+const char* findTheChar(const char *str, char chr)
+{
+
+    for (int k = 0; *str != 0; k++)
+        if (*(str + k ) == chr)
+            return (str + k);
+
+    return NULL;
+}
+
+3c.
+
+const char* findTheChar(const char *str, char chr)
+{
+	while (str <= str + strlen(str) )
+	{
+		if (*str == chr)
+			return str;
+		str++;
+	}
+
+    return NULL;
+}
+
+4.
+
+diff=1
+4
+79
+5
+9
+-1
+19
+
+---------------------
+the first line cout outputs will be 1 and then a new line, because the difference beween the memory address of the 5th entry of "array" and the entry of "array" that ptr is pointing to is 1.
+
+the next 6 numbers on the next 6 lines are the final values of the entries of array.
+
+The number 4 comes from the original 4 being swapped to the beginning of the array.
+
+the number 79 comes from the line *(array+1) = 79; which sets 79 to be the value stored at the first memory address after the memory address which marks the beginning of the array.
+note that swap1 does not do anything because the array addresses cannot be swapped.
+
+the number 5 comes from the original 5 in the array that was swapped from being the 0th entry in the array to being the 1th entry of the array
+
+the 9 come from ptr[1] = 9; where ptr was set to the 2th position of array, so ptr[1] refers to the 3th position of the array.
+
+the -1 comes from the lines 
+
+ptr += 2;
+*ptr = -1;
+
+which put the pointer at the 4th position of array (from the 2nd position where it was before) and set the value located there to -1.
+
+the 19 was there in the original array.
+The last item that was output is the newline after 19
+
+
+5.
+
+void deleteG(char *string)
+{
+	char *hold;
+	while( string < string + strlen(string))
+	{
+		if (*string == 'G' || *string == 'g')
+		{
+			hold = string;
+			while (string < string + strlen(string))
+			{
+				*string = *(string+1);
+				string++;
+			}
+			string = hold;
+		}
+		string++;
+	}
+}
