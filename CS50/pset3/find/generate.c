@@ -22,6 +22,7 @@
 int main(int argc, string argv[])
 {
     // TODO: comment me
+    // checks on stuff
     if (argc != 2 && argc != 3)
     {
         printf("Usage: ./generate n [s]\n");
@@ -29,9 +30,11 @@ int main(int argc, string argv[])
     }
 
     // TODO: comment me
+    // grabs the arg thing
     int n = atoi(argv[1]);
 
     // TODO: comment me
+    // okay now wat
     if (argc == 3)
     {
         srand((unsigned int) atoi(argv[2]));
@@ -42,6 +45,7 @@ int main(int argc, string argv[])
     }
 
     // TODO: comment me
+    // okays
     for (int i = 0; i < n; i++)
     {
         printf("%i\n", rand() % LIMIT);

@@ -17,12 +17,30 @@
 bool search(int value, int values[], int n)
 {
     // TODO: implement a searching algorithm
+	
+	bool foundflag = false;
+	
+	if (n < 1)
+	{
+	    return false;
+	}
+	
 	for (int i = 0; i < n; i++)
 	{
 		if (values[i] == value)
-			return true;
+		{
+			foundflag = true;
+	    }
 	}
-    return false;
+	
+	if (foundflag == true)
+	{
+	    return true;
+	}
+	else
+	{
+        return false;
+    }
 }
 
 /**
@@ -31,7 +49,7 @@ bool search(int value, int values[], int n)
 void sort(int values[], int n)
 {
     // TODO: implement an O(n^2) sorting algorithm
-	
+	/*
 	for (int i = 0; i < n; i++)
     {
         int smallestnumber = 50, smallestnumberindex = 0;
@@ -53,7 +71,7 @@ void sort(int values[], int n)
         k = 0;
         smallestnumber = 50;
     }
-    
+    */   
 	
     return;
 }
