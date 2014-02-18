@@ -49,7 +49,6 @@ bool search(int value, int values[], int n)
 void sort(int values[], int n)
 {
     // TODO: implement an O(n^2) sorting algorithm
-	/*
 	for (int i = 0; i < n; i++)
     {
         int smallestnumber = 50, smallestnumberindex = 0;
@@ -71,7 +70,7 @@ void sort(int values[], int n)
         k = 0;
         smallestnumber = 50;
     }
-    */   
+
 	
     return;
 }
