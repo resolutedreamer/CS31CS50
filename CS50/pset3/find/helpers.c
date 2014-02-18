@@ -8,6 +8,7 @@
  */
        
 #include <cs50.h>
+#include <stdio.h>
 
 #include "helpers.h"
 
@@ -17,11 +18,22 @@
 bool search(int value, int values[], int n)
 {
     // TODO: implement a searching algorithm
-	for (int i = 0; i < n; i++)
+    int i;
+	for (i = 0; i < n; i++)
 	{
-		if (values[i] == value)
+	    printf("something\n");
+	    printf("i = %d\n", i);
+		printf("values[i] = %d\n", values[i]);
+	    if (values[i] == value)
+		{
 			return true;
+		}
 	}
+	printf("values[0] = %d\n", values[0]);
+	printf("values[1] = %d\n", values[1]);
+	printf("values[2] = %d\n", values[2]);
+	printf("values[84] = %d\n", values[84]);
+	
     return false;
 }
 
@@ -45,7 +57,7 @@ void sort(int values[], int n)
             }
             k++;
         }
-        printf("%dth iteration\n %d is smallest\n",i, smallestnumber);
+        //printf("%dth iteration\n %d is smallest\n",i, smallestnumber);
         int temp1 = values[i];
         int temp2 = smallestnumber;
         values[i] = temp2;
